@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Plugin Name:       User WP Block
  * Description:       Gutenberg block for displaying user information in Gutenberg editor
@@ -9,3 +11,4 @@
  * Text Domain:       uwb
 */
 
+require_once('UserInfoHandler.php');
