@@ -12,3 +12,7 @@ declare(strict_types=1);
 */
 
 require_once('UserInfoHandler.php');
+
+
+require_once('user-fields.php');
+
