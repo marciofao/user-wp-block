@@ -1,1 +1,1 @@
-(0,wp.blocks.registerBlockType)("marciofao/user-wp-block",{edit:function(){return"Edit"},save:function(){return"Save"}});
+(()=>{"use strict";window.wp.blocks,(0,wp.blocks.registerBlockType)("marciofao/user-wp-block",{apiVersion:2,title:"User Info",icon:"universal-access-alt",category:"text",attributes:{message:{type:"string",source:"text",selector:"div",default:""}},edit:function(){return"Edit"},save:function(){return"Save"}})})();
