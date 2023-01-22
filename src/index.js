@@ -1,15 +1,18 @@
 import { registerBlockType } from '@wordpress/blocks';
 
-var registerBlocktype = wp.blocks.registerBlockType;
+import './style.scss';
 
+import Edit from './edit';
+import save from './save';
 import metadata from './block.json';
 
-registerBlocktype(metadata.name, {
-	
-     edit: function(){
-        return "Edit";
-     },
-     save: function(){
-        return "Save";
-     }
-})
+registerBlockType( metadata.name, {
+    /**
+     * @see ./edit.js
+     */
+    edit: Edit,
+    /**
+     * @see ./save.js
+     */
+    save,
+} );
