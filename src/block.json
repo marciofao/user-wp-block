@@ -3,8 +3,16 @@
 	"title": "User Info",
 	"name": "create-block/user-wp-block",
     "description": "Adds specific user information to the page ",
-	"category": "text",
+	"category": "embed",
 	"icon": "universal-access-alt",
     "textdomain": "uwb",
-	"editorScript": "file:./index.js"
+	"editorScript": "file:./index.js",
+	"attributes": {
+		"message": {
+			"type": "string",
+			"source": "text",
+			"selector": "div",
+			"default": ""
+		}
+	}
 }
