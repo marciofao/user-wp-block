@@ -17,24 +17,23 @@ declare(strict_types=1);
 
 require_once('UserInfoHandler.php');
 
-
 require_once('user-fields.php');
 
-/* 
+/*
  * Setup Block editor
- */ 
+ */
 
- function uwb_user_info_block_init() {
-    register_block_type( __DIR__ . '/build/' );
-}
-add_action( 'init', 'uwb_user_info_block_init' );
+add_action('init', static function () {
+    register_block_type(__DIR__ . '/build/');
+});
 
 // automatically load dependencies and version
-$asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
+$assetFile = include(plugin_dir_path(__FILE__) . 'build/index.asset.php');
 
 wp_register_script(
     'user-wp-block',
-    plugins_url( 'build/index.js', __FILE__ ),
-    $asset_file['dependencies'],
-    $asset_file['version']
+    plugins_url('build/index.js', __FILE__),
+    $assetFile['dependencies'],
+    $assetFile['version'],
+    true
 );
