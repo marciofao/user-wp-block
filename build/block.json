@@ -6,5 +6,5 @@
   "category": "text",
   "icon": "universal-access-alt",
   "textdomain": "uwb",
-  "editorScript": "file:./build/index.js"
+  "editorScript": "file:./index.js"
 }

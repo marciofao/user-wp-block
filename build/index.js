@@ -18,7 +18,7 @@ module.exports = window["wp"]["blocks"];
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"title":"User Info","name":"create-block/user-wp-block","description":"Adds specific user information to the page ","category":"text","icon":"universal-access-alt","textdomain":"uwb","editorScript":"file:./build/index.js"}');
+module.exports = JSON.parse('{"apiVersion":2,"title":"User Info","name":"create-block/user-wp-block","description":"Adds specific user information to the page ","category":"text","icon":"universal-access-alt","textdomain":"uwb","editorScript":"file:./index.js"}');
 
 /***/ })
 
@@ -101,6 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block.json */ "./src/block.json");
 
+var registerBlocktype = wp.blocks.registerBlockType;
 
 registerBlocktype(_block_json__WEBPACK_IMPORTED_MODULE_1__.name, {
   edit: function () {

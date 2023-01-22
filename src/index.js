@@ -1,5 +1,7 @@
 import { registerBlockType } from '@wordpress/blocks';
 
+var registerBlocktype = wp.blocks.registerBlockType;
+
 import metadata from './block.json';
 
 registerBlocktype(metadata.name, {
