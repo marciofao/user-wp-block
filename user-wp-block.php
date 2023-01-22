@@ -20,3 +20,21 @@ require_once('UserInfoHandler.php');
 
 require_once('user-fields.php');
 
+/* 
+ * Setup Block editor
+ */ 
+
+ function uwb_user_info_block() {
+    register_block_type( __DIR__ . '/build/' );
+}
+add_action( 'init', 'uwb_user_info_block' );
+
+// automatically load dependencies and version
+$asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
+
+wp_register_script(
+    'user-wp-block',
+    plugins_url( 'build/index.js', __FILE__ ),
+    $asset_file['dependencies'],
+    $asset_file['version']
+);

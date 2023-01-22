@@ -1,0 +1,16 @@
+{
+	"apiVersion": 2,
+	"title": "User Info",
+	"name": "user-wp-block",
+	"description": "Adds specific user information to the page ",
+	"category": "text",
+	"icon": "universal-access-alt",
+	"main": "build/index.js",
+	"scripts": {
+        "build": "wp-scripts build",
+        "start": "wp-scripts start"
+    },
+	"dependencies": {
+		"@wordpress/scripts": "^25.2.0"
+	}
+}

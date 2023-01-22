@@ -1,0 +1,1 @@
+(0,wp.blocks.registerBlockType)("marciofao/user-wp-block",{edit:function(){return"Edit"},save:function(){return"Save"}});

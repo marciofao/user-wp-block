@@ -1,0 +1,10 @@
+{
+	"apiVersion": 2,
+	"title": "User Info",
+	"name": "create-block/user-wp-block",
+    "description": "Adds specific user information to the page ",
+	"category": "text",
+	"icon": "universal-access-alt",
+    "textdomain": "uwb",
+	"editorScript": "file:./build/index.js"
+}
