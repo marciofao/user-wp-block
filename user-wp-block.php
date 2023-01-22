@@ -25,7 +25,7 @@ require_once('user-fields.php');
  */ 
 
  function uwb_user_info_block() {
-    register_block_type( __DIR__ . '/build/' );
+    register_block_type( __DIR__ );
 }
 add_action( 'init', 'uwb_user_info_block' );
 
