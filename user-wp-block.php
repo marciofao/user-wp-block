@@ -24,7 +24,7 @@ require_once('user-fields.php');
  */
 
 add_action('init', static function () {
-    register_block_type(__DIR__ . '/build/');
+    register_block_type(__DIR__ . '/build');
 });
 
 // automatically load dependencies and version
