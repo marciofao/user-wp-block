@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"@wordpress/components": "^23.2.0",
-		"@wordpress/scripts": "^25.2.0"
+		"@wordpress/scripts": "^25.2.0",
+		"react-select": "^5.7.0"
 	}
 }
