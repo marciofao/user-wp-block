@@ -13,7 +13,7 @@ export default function Edit({ attributes, setAttributes }) {
   
 	return (
 		<div { ...useBlockProps() } >
-	     <UserListSelector
+	     <UserListSelector 
 		 value={ attributes.message }   
 		 onChange={ ( val ) => setAttributes( { message: val } ) }
 		 />
