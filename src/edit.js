@@ -19,7 +19,7 @@ export default function Edit( { attributes, isSelected, setAttributes } ) {
                     label="Gutenpride Block"
                     instructions="Add your message"
                 >
-                    <TextControl
+                    <UserListSelector
                         value={ attributes.message }
                         onChange={ ( val ) =>
                             setAttributes( { message: val } )
