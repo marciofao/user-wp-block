@@ -10,7 +10,13 @@
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
   "attributes": {
-    "message": {
+    "userId": {
+      "type": "string",
+      "source": "text",
+      "selector": "div",
+      "default": ""
+    },
+    "label": {
       "type": "string",
       "source": "text",
       "selector": "div",

@@ -1,36 +1,37 @@
-
-
-
 import { useBlockProps, isSelected } from '@wordpress/block-editor';
 import { Placeholder, TextControl } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
 import React, { Component } from "react";
 import Select from 'react-select'
 
-
 import './editor.scss';
 
 export default function Edit({ attributes, setAttributes, isSelected }) {
-  
+
 	return (
 		<div { ...useBlockProps() } >
-             { attributes.message && ! isSelected ? (
-                <div>{ attributes.message }</div>
+             { attributes.userId && ! isSelected ? (
+                <div>{ attributes.label }</div>
             ) : (
-               
-              <UserListSelector 
-                value={ attributes.message }   
-                onChange={ ( val ) => setAttributes( { message: val } ) }
-                />
+                <Placeholder 
+                label="User Info"
+                instructions="Select an user:"
+                >     
+                    <UserListSelector 
+                    class="selector"
+                        value={ attributes.userId }   
+                        onChange={ ( val, label) => setAttributes( { userId: val , label:label} ) }
+                    />
+                </Placeholder>
              
             )}
            
 	  </div>
 	  
 	);
-  }
+}
 
-  class UserListSelector extends Component {
+class UserListSelector extends Component {
     constructor( props ) {
         super( props );
         this.state = {
@@ -58,23 +59,25 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
         );
     }
 
+    handleChange = (selectedOption) => {
+        this.props.onChange(selectedOption.value, selectedOption.label); 
+    }
+
     render() {
         const { error, isLoaded, items } = this.state;
-        const { setAttributes } = this.props;
-        
-        // If there's an error in fetching the remote data, display the error.
+        const selectedOption = items.find(item => item.value === this.props.value);
+    
         if ( error ) {
             return <div>Error: { error.message }</div>;
-        // If the data is still being loaded, show a loading message/icon/etc.
         } else if ( ! isLoaded ) {
             return <div>Loading...</div>;
-        // Data loaded successfully; so let's show it.
         } else {
             return (
                 <Select 
-                options={items} 
-               
-            />
+                    options={items} 
+                    value={selectedOption}
+                    onChange={this.handleChange}
+                />
             );
         }
     }
