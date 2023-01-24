@@ -7,29 +7,32 @@ import apiFetch from '@wordpress/api-fetch';
 import React, { Component } from "react";
 import Select from 'react-select'
 
+
+
+
+
 import './editor.scss';
 
-export default function Edit( { attributes, isSelected, setAttributes } ) {
-    return (
-        <div { ...useBlockProps() }>
-            { attributes.message && ! isSelected ? (
+export default function Edit({ attributes, setAttributes }) {
+	
+  
+	return (
+		<div { ...useBlockProps() } >
+             { attributes.message && ! isSelected ? (
                 <div>{ attributes.message }</div>
             ) : (
-                <Placeholder
-                    label="Gutenpride Block"
-                    instructions="Add your message"
-                >
-                    <UserListSelector
-                        value={ attributes.message }
-                        onChange={ ( val ) =>
-                            setAttributes( { message: val } )
-                        }
-                    />
-                </Placeholder>
-            ) }
-        </div>
-    );
-}
+               
+              
+                   <UserListSelector 
+		 value={ attributes.message }   
+		 onChange={ ( val ) => setAttributes( { message: val } ) }
+		 /> 
+             
+            )}
+	  </div>
+	  
+	);
+  }
 
   class UserListSelector extends Component {
     constructor( props ) {
@@ -72,8 +75,12 @@ export default function Edit( { attributes, isSelected, setAttributes } ) {
         } else {
             return (
                 <Select 
-				options={items} 
-				/>
+                options={items} 
+                onChange={(val) => {
+                    setAttributes({ message: val });
+                    console.log(val);
+                }}
+            />
             );
         }
     }

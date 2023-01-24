@@ -2149,18 +2149,14 @@ __webpack_require__.r(__webpack_exports__);
 function Edit(_ref) {
   let {
     attributes,
-    isSelected,
     setAttributes
   } = _ref;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(), attributes.message && !isSelected ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, attributes.message) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Placeholder, {
-    label: "Gutenpride Block",
-    instructions: "Add your message"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(UserListSelector, {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(), attributes.message && !isSelected ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, attributes.message) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(UserListSelector, {
     value: attributes.message,
     onChange: val => setAttributes({
       message: val
     })
-  })));
+  }));
 }
 class UserListSelector extends react__WEBPACK_IMPORTED_MODULE_4__.Component {
   constructor(props) {
@@ -2202,7 +2198,13 @@ class UserListSelector extends react__WEBPACK_IMPORTED_MODULE_4__.Component {
       // Data loaded successfully; so let's show it.
     } else {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        options: items
+        options: items,
+        onChange: val => {
+          setAttributes({
+            message: val
+          });
+          console.log(val);
+        }
       });
     }
   }
@@ -10461,7 +10463,7 @@ function combine (array, callback) {
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"title":"User Info","name":"create-block/user-wp-block","description":"Adds specific user information to the page ","category":"embed","icon":"universal-access-alt","textdomain":"uwb","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"message":{"type":"string","source":"text","selector":"div","default":""}}}');
+module.exports = JSON.parse('{"apiVersion":2,"title":"User Info","name":"create-block/user-wp-block","description":"Adds specific user information to the page ","category":"embed","icon":"universal-access-alt","textdomain":"uwb","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"message":{"type":"string","source":"value","selector":"div","default":""}}}');
 
 /***/ })
 
