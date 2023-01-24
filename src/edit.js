@@ -1,26 +1,35 @@
 
-import React, { Component } from "react";
-import { useBlockProps } from '@wordpress/block-editor';
-import Select from 'react-select'
-import apiFetch from '@wordpress/api-fetch';
-import { __ } from '@wordpress/i18n';
 
+
+import { useBlockProps } from '@wordpress/block-editor';
+import { Placeholder, TextControl } from '@wordpress/components';
+import apiFetch from '@wordpress/api-fetch';
+import React, { Component } from "react";
+import Select from 'react-select'
 
 import './editor.scss';
 
-export default function Edit({ attributes, setAttributes }) {
-	
-  
-	return (
-		<div { ...useBlockProps() } >
-	     <UserListSelector 
-		 value={ attributes.message }   
-		 onChange={ ( val ) => setAttributes( { message: val } ) }
-		 />
-	  </div>
-	  
-	);
-  }
+export default function Edit( { attributes, isSelected, setAttributes } ) {
+    return (
+        <div { ...useBlockProps() }>
+            { attributes.message && ! isSelected ? (
+                <div>{ attributes.message }</div>
+            ) : (
+                <Placeholder
+                    label="Gutenpride Block"
+                    instructions="Add your message"
+                >
+                    <TextControl
+                        value={ attributes.message }
+                        onChange={ ( val ) =>
+                            setAttributes( { message: val } )
+                        }
+                    />
+                </Placeholder>
+            ) }
+        </div>
+    );
+}
 
   class UserListSelector extends Component {
     constructor( props ) {
