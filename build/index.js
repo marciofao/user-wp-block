@@ -2149,7 +2149,8 @@ __webpack_require__.r(__webpack_exports__);
 function Edit(_ref) {
   let {
     attributes,
-    setAttributes
+    setAttributes,
+    isSelected
   } = _ref;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(), attributes.message && !isSelected ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, attributes.message) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(UserListSelector, {
     value: attributes.message,
@@ -2188,6 +2189,9 @@ class UserListSelector extends react__WEBPACK_IMPORTED_MODULE_4__.Component {
       isLoaded,
       items
     } = this.state;
+    const {
+      setAttributes
+    } = this.props;
 
     // If there's an error in fetching the remote data, display the error.
     if (error) {
@@ -2198,13 +2202,7 @@ class UserListSelector extends react__WEBPACK_IMPORTED_MODULE_4__.Component {
       // Data loaded successfully; so let's show it.
     } else {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        options: items,
-        onChange: val => {
-          setAttributes({
-            message: val
-          });
-          console.log(val);
-        }
+        options: items
       });
     }
   }
@@ -10463,7 +10461,7 @@ function combine (array, callback) {
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"title":"User Info","name":"create-block/user-wp-block","description":"Adds specific user information to the page ","category":"embed","icon":"universal-access-alt","textdomain":"uwb","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"message":{"type":"string","source":"value","selector":"div","default":""}}}');
+module.exports = JSON.parse('{"apiVersion":2,"title":"User Info","name":"create-block/user-wp-block","description":"Adds specific user information to the page ","category":"embed","icon":"universal-access-alt","textdomain":"uwb","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"message":{"type":"string","source":"text","selector":"div","default":""}}}');
 
 /***/ })
 

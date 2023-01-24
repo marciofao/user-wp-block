@@ -1,20 +1,16 @@
 
 
 
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, isSelected } from '@wordpress/block-editor';
 import { Placeholder, TextControl } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
 import React, { Component } from "react";
 import Select from 'react-select'
 
 
-
-
-
 import './editor.scss';
 
-export default function Edit({ attributes, setAttributes }) {
-	
+export default function Edit({ attributes, setAttributes, isSelected }) {
   
 	return (
 		<div { ...useBlockProps() } >
@@ -22,13 +18,13 @@ export default function Edit({ attributes, setAttributes }) {
                 <div>{ attributes.message }</div>
             ) : (
                
-              
-                   <UserListSelector 
-		 value={ attributes.message }   
-		 onChange={ ( val ) => setAttributes( { message: val } ) }
-		 /> 
+              <UserListSelector 
+                value={ attributes.message }   
+                onChange={ ( val ) => setAttributes( { message: val } ) }
+                />
              
             )}
+           
 	  </div>
 	  
 	);
@@ -64,7 +60,8 @@ export default function Edit({ attributes, setAttributes }) {
 
     render() {
         const { error, isLoaded, items } = this.state;
-
+        const { setAttributes } = this.props;
+        
         // If there's an error in fetching the remote data, display the error.
         if ( error ) {
             return <div>Error: { error.message }</div>;
@@ -76,10 +73,7 @@ export default function Edit({ attributes, setAttributes }) {
             return (
                 <Select 
                 options={items} 
-                onChange={(val) => {
-                    setAttributes({ message: val });
-                    console.log(val);
-                }}
+               
             />
             );
         }

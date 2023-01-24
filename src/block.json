@@ -12,7 +12,7 @@
 	"attributes": {
 		"message": {
 			"type": "string",
-			"source": "value",
+			"source": "text",
 			"selector": "div",
 			"default": ""
 		}
