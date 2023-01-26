@@ -10,4 +10,39 @@
   font-size: 30px;
 }
 
+.uwb-block {
+  background: lightgray;
+}
+
+.uwb-title {
+  background: black;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  height: 40px;
+}
+
+.uwb-image {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.uwb-desc {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 66px;
+  color: white;
+}
+
+.uwb-details {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: flex-start;
+}
+
 /*# sourceMappingURL=style-index.css.map*/

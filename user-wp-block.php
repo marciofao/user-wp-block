@@ -30,12 +30,20 @@ add_action('init', static function () {
 });
 
 // automatically load dependencies and version
-$assetFile = include(plugin_dir_path(__FILE__) . 'build/index.asset.php');
+$uwbAssetFile = include(plugin_dir_path(__FILE__) . 'build/index.asset.php');
 
 wp_register_script(
     'user-wp-block',
     plugins_url('build/index.js', __FILE__),
-    $assetFile['dependencies'],
-    $assetFile['version'],
+    $uwbAssetFile['dependencies'],
+    $uwbAssetFile['version'],
     true
 );
+
+/*
+ * enquequee js on frontend
+ */
+
+add_action('wp_enqueue_scripts', static function () {
+    wp_enqueue_script('uwp_js', plugins_url('uwp-fetch.js', __FILE__), [], rand(0, 99999), true);
+});
