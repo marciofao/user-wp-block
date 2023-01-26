@@ -1,58 +1,32 @@
 import { useBlockProps } from '@wordpress/block-editor';
-import { Placeholder, TextControl } from '@wordpress/components';
-import apiFetch from '@wordpress/api-fetch';
-import React, { Component } from "react";
+
 
 
 export default function save( { attributes } ) {
     const blockProps = useBlockProps.save();
     return (
         <div { ...blockProps }>
-            <DisplayUserDetails/>
+            <div class="uwb-block">
+            <div class="uwb-title">
+                Name
+            </div>
+            <div class="uwb-image image_of_person">
+            
+               
+            </div>
+            <div class="uwb-details">
+               <div class="short_description"></div>
+               <div class="position_in_the_company"></div>
+               <div class="github"></div>
+               <div class="linkedin"></div>
+               <div class="xing"></div>
+               <div class="facebook"></div>
+   
+            </div>
+            
+        </div>
+        
         </div>
     )
 }
 
-class DisplayUserDetails extends Component {
-    constructor( props , attributes) {
-        super( props );
-        this.state = {
-            error: null,
-            isLoaded: false,
-            items: [],
-        };
-    }
-
-    componentDidMount(attributes) {
-        apiFetch( { 
-            path: 'uwp/v1/users/?id=',
-            method: 'POST',
-            data: { id: attributes.userId },
-        } )
-            .then( ( res ) => {
-                console.log( res );
-            }
-        );
-    }
-
-  /*   handleChange = (selectedOption) => {
-        this.props.onChange(selectedOption.value, selectedOption.label); 
-    } */
-
-    render() {
-         const { error, isLoaded, items } = this.state;
-      //  const selectedOption = items.find(item => item.value === this.props.value);
-    
-        if ( error ) {
-            return <div>Error: { error.message }</div>;
-        } else if ( ! isLoaded ) {
-            return <div>Loading...??</div>;
-        } else {
-            return (
-            <div>
-                {items.id}
-            </div>
-            );
-        }
-    }
-}
