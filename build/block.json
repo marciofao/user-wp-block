@@ -11,16 +11,10 @@
   "style": "file:./style-index.css",
   "attributes": {
     "userId": {
-      "type": "string",
-      "source": "text",
-      "selector": "div",
-      "default": ""
+      "type": "string"
     },
     "label": {
-      "type": "string",
-      "source": "text",
-      "selector": "div",
-      "default": ""
+      "type": "string"
     }
   }
 }

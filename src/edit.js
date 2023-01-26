@@ -4,6 +4,7 @@ import apiFetch from '@wordpress/api-fetch';
 import React, { Component } from "react";
 import Select from 'react-select'
 
+
 import './editor.scss';
 
 export default function Edit({ attributes, setAttributes, isSelected }) {
@@ -11,7 +12,9 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 	return (
 		<div { ...useBlockProps() } >
              { attributes.userId && ! isSelected ? (
+              
                 <div>{ attributes.label }</div>
+               
             ) : (
                 <Placeholder 
                 label="User Info"
