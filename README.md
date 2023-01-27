@@ -45,7 +45,7 @@ Otherwise, if everything was consolidated when the post/page were saved it would
 
 
 ## Database included
-A export of the testing site users and posts is available in this repo.
+An export of the testing site users and posts is available in this repo.
 
 It can be imported using the plugin All-in-on-import.
 
