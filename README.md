@@ -30,11 +30,11 @@ The actual user data is not stored inside the post, that is loaded asynchronousl
 
 **Listing all users**
 
-`[site_url]wp-json/uwp/v1/users`
+`[site_url]/wp-json/uwp/v1/users`
 
 **Listing all user data by id**
 
-`[site_url]wp-json/uwp/v1/users?id=1`
+`[site_url]/wp-json/uwp/v1/users?id=1`
 
 ### Client side rendering?
 Yes, this is the method for rendering it in pages and posts.
@@ -52,4 +52,21 @@ It can be imported using the plugin All-in-on-import.
 The admin user credentials are:
 User: Admin
 Pass: 123
+
+## Automated Testing
+
+### PHP tests
+Automated testing are enabling using [Codeception Framework](https://codeception.com/).
+First, edit the Website URL at:
+`tests/acceptanceacceptance.suite.yml`
+Then, php tests can be ran by simply running the following command from the plugin folder:
+`php vendor/bin/codecept run `
+![Codeception running](https://i.imgur.com/lVY1j80.png)
+
+
+### JS tests
+Automated JS tests are prepared with [JEST Framework](https://jestjs.io/).
+Tests can be run by executing:
+`npm run test`
+
 

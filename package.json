@@ -8,11 +8,13 @@
 	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build",
-		"start": "wp-scripts start"
+		"start": "wp-scripts start",
+		"test": "jest"
 	},
 	"dependencies": {
 		"@wordpress/components": "^23.2.0",
 		"@wordpress/scripts": "^25.2.0",
+		"jest-environment-jsdom": "^29.4.1",
 		"react-select": "^5.7.0"
 	},
 	"devDependencies": {
