@@ -28,6 +28,8 @@ The actual user data is not stored inside the post, that is loaded asynchronousl
 
 ### Client side rendering?
 Yes, this is the method for rendering it in pages and posts.
+
 This method has the advantage of whenever some user data changes over the time the page will keep updated.
+
 Otherwise, if everything was consolidated when the post/page were saved it would require an update on the post to actually updating the data on the website.
 
