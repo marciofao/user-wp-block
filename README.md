@@ -45,7 +45,7 @@ Otherwise, if everything was consolidated when the post/page were saved it would
 
 
 ## Database included
-An export of the testing site users and posts is available in this repo:
+An export of the testing site users and posts is available in this file contained in the repo:
 
 `all-in-one-export.wpress`
 
