@@ -50,13 +50,15 @@ A export of the testing site users and posts is available in this repo.
 It can be imported using the plugin All-in-on-import.
 
 The admin user credentials are:
+
 User: Admin
+
 Pass: 123
 
 ## Automated Testing
 
 ### PHP tests
-Automated testing are enabling using [Codeception Framework](https://codeception.com/).
+Automated testing are enabled by using [Codeception Framework](https://codeception.com/).
 First, edit the Website URL at:
 `tests/acceptanceacceptance.suite.yml`
 Then, php tests can be ran by simply running the following command from the plugin folder:
