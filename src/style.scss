@@ -6,7 +6,7 @@
 .wp-block-create-block-user-wp-block {
     font-family: Arial, sans-serif;
     font-size: 30px;
-   
+    max-width: 300px !important;
 }
 
 .uwb-block{
@@ -37,4 +37,8 @@
 .uwb-details{
     flex-flow: row nowrap;
     align-content: flex-start;
+}
+
+.uwb-user-id{
+    display: none;
 }

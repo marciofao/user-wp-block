@@ -1,21 +1,33 @@
-function uwp_fetch(id){
-    console.log(UWP_ENDPOINT+id)
+function uwp_fetch(id, index){
 
     fetch(UWP_ENDPOINT+id)
     .then((response) => response.json())
-    .then((data) => rnb_populate(data));
+    .then((data) => uwp_populate(data, index));
 }
 
-function rnb_populate(data){
+function uwp_populate(data, index){
     
-    console.log(data)
-   
-    document.querySelector('.uwb-block .uwb-fullname').innerText = data.first_name + ' ' + data.last_name
-    document.querySelector('.uwb-block .short_description').innerText =  data.first_name
-    document.querySelector('.uwb-block .position_in_the_company').innerText =  data.first_name
-    document.querySelector('.uwb-block .image_of_person').style.backgroundImage = 'url("'+data.image_of_person+'")'
-    document.querySelector('.uwb-block .github').innerText = data.github
-    document.querySelector('.uwb-block .linkedin').innerText = data.linkedin
-    document.querySelector('.uwb-block .xing').innerText = data.xing
-    document.querySelector('.uwb-block .facebook').innerText = data.facebook
+    document.querySelectorAll('.uwb-block .uwb-fullname').item(index).innerText = data.first_name + ' ' + data.last_name
+    document.querySelectorAll('.uwb-block .short_description').item(index).innerText =  data.first_name
+    document.querySelectorAll('.uwb-block .position_in_the_company').item(index).innerText =  data.first_name
+    document.querySelectorAll('.uwb-block .image_of_person').item(index).style.backgroundImage = 'url("'+data.image_of_person+'")'
+    document.querySelectorAll('.uwb-block .github').item(index).innerText = data.github
+    document.querySelectorAll('.uwb-block .linkedin').item(index).innerText = data.linkedin
+    document.querySelectorAll('.uwb-block .xing').item(index).innerText = data.xing
+    document.querySelectorAll('.uwb-block .facebook').item(index).innerText = data.facebook
 }
+
+//verify if widget has been added to page and populate
+document.addEventListener('DOMContentLoaded', () => {
+
+    let elements = document.querySelectorAll('.uwb-user-id');
+    let i = 0;
+    if(elements){
+        elements.forEach(function(el){
+            id = el.innerText
+            uwp_fetch(id,i)
+            i++
+        })
+    }
+    
+})

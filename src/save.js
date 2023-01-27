@@ -1,17 +1,18 @@
 import { useBlockProps } from '@wordpress/block-editor';
 
 
-
 export default function save( { attributes } ) {
     const blockProps = useBlockProps.save();
     return (
         <div { ...blockProps }>
             <div class="uwb-block">
+                <div class="uwb-user-id">
+                 {attributes.userId}
+                </div>
                 <div class="uwb-fullname">
-                    Name
+                 {attributes.label}
                 </div>
                 <div class="uwb-image image_of_person">
-                
                 
                 </div>
                 <div class="uwb-details">
@@ -21,13 +22,8 @@ export default function save( { attributes } ) {
                     <div class="linkedin"></div>
                     <div class="xing"></div>
                     <div class="facebook"></div>
-    
                 </div>
-                
             </div>
-            <script>
-                uwp_fetch(attributes.userId);
-            </script>
         </div>
        
     )
