@@ -26,6 +26,14 @@ Once a post is saved some HTML will be saved to the post containing some basic i
 
 The actual user data is not stored inside the post, that is loaded asynchronously when the page loads.
 
+## Available Endpoints
+
+** Listing all users **
+[site_url]wp-json/uwp/v1/users
+
+** Listing all user data by id **
+[site_url]wp-json/uwp/v1/users?id=1
+
 ### Client side rendering?
 Yes, this is the method for rendering it in pages and posts.
 
