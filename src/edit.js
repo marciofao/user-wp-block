@@ -1,5 +1,5 @@
-import { useBlockProps, isSelected } from '@wordpress/block-editor';
-import { Placeholder, TextControl } from '@wordpress/components';
+import { useBlockProps } from '@wordpress/block-editor';
+import { Placeholder } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
 import React, { Component } from "react";
 import Select from 'react-select'
