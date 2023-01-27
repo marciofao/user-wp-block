@@ -8,8 +8,8 @@ function uwp_fetch(id, index){
 function uwp_populate(data, index){
     
     document.querySelectorAll('.uwb-block .uwb-fullname').item(index).innerText = data.first_name + ' ' + data.last_name
-    document.querySelectorAll('.uwb-block .short_description').item(index).innerText =  data.first_name
-    document.querySelectorAll('.uwb-block .position_in_the_company').item(index).innerText =  data.first_name
+    document.querySelectorAll('.uwb-block .short_description').item(index).innerText =  data.short_description
+    document.querySelectorAll('.uwb-block .position_in_the_company').item(index).innerText =  data.position_in_the_company
     document.querySelectorAll('.uwb-block .image_of_person').item(index).style.backgroundImage = 'url("'+data.image_of_person+'")'
     document.querySelectorAll('.uwb-block .github').item(index).innerText = data.github
     document.querySelectorAll('.uwb-block .linkedin').item(index).innerText = data.linkedin
