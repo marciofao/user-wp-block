@@ -18,7 +18,7 @@ The data used in rendering, except from First and Last name, are custom user met
 ![User edit meta fields](https://i.imgur.com/Lougm3W.png)
 
 
-## The approach used
+## The approach I used
 
 When editing on Gutenberg editor, the user data is fetched asynchronously, for that an endpoint is serving it.
 
