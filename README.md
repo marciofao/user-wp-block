@@ -33,3 +33,13 @@ This method has the advantage of whenever some user data changes over the time t
 
 Otherwise, if everything was consolidated when the post/page were saved it would require an update on the post to actually updating the data on the website.
 
+
+## Database included
+A export of the testing site users and posts is available in this repo.
+
+It can be imported using the plugin All-in-on-import.
+
+The admin user credentials are:
+User: Admin
+Pass: 123
+
