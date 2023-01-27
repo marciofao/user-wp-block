@@ -29,9 +29,11 @@ The actual user data is not stored inside the post, that is loaded asynchronousl
 ## Available Endpoints
 
 **Listing all users**
+
 `[site_url]wp-json/uwp/v1/users`
 
 **Listing all user data by id**
+
 `[site_url]wp-json/uwp/v1/users?id=1`
 
 ### Client side rendering?
