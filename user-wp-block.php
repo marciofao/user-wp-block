@@ -21,8 +21,6 @@ require_once('user-info-rest-api.php');
 
 require_once('user-fields.php');
 
-
-
 /*
  * Setup Block editor
  */
@@ -48,4 +46,4 @@ wp_register_script(
 
  add_action('wp_enqueue_scripts', static function () {
     wp_enqueue_script('uwp_js', plugins_url('uwp-fetch.js', __FILE__), [], rand(0, 99999), false);
-});
+ });
