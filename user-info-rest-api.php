@@ -15,13 +15,11 @@ add_action('rest_api_init', static function () {
      ]);
 }, 10, 1);
 
-
-add_action( 'wp_head',   static function() {
-   ?>
+add_action('wp_head', static function () {
+    ?>
    <script>
-    const UWP_ENDPOINT = '<?php echo get_option('siteurl')?>/wp-json/uwp/v1/users?id='
+    const UWP_ENDPOINT = '<?php echo esc_html(get_option('siteurl'))?>/wp-json/uwp/v1/users?id='
    </script>
-   <?php
-}, 1 );
-
+    <?php
+}, 1);
 
